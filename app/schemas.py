@@ -22,6 +22,17 @@ class Goal(str, Enum):
     GAIN = "gain"
 
 
+class ProfileExtraction(BaseModel):
+    """대화에서 추출한 프로필 정보. 여러 턴에 걸쳐 조금씩 모일 수 있어 전부 Optional."""
+
+    gender: Gender | None = None
+    age: int | None = None
+    height_cm: float | None = None
+    weight_kg: float | None = None
+    activity_level: ActivityLevel | None = None
+    goal: Goal | None = None
+
+
 class UserProfile(BaseModel):
     gender: Gender
     age: int = Field(gt=0, lt=120)
@@ -63,6 +74,8 @@ class RemainingBudget(BaseModel):
 
 class Dish(BaseModel):
     name: str
+    # 배달 메뉴(search_delivery_menu) 결과인 경우 브랜드명(예: "서브웨이"), 그 외(레시피/웹검색)는 None.
+    brand: str | None
     calories: float
     macros: MacroTargets
     recipe: str | None

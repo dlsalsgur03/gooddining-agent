@@ -4,17 +4,20 @@ from langchain.agents import AgentState as BaseInnerAgentState
 from langchain_core.messages import AnyMessage
 from langgraph.graph.message import add_messages
 
-from app.schemas import CalorieTarget, MealPlan, UserProfile
+from app.schemas import CalorieTarget, MealPlan, ProfileExtraction, UserProfile
 
 
 class AgentState(TypedDict):
     messages: Annotated[list[AnyMessage], add_messages]
     user_id: str
     profile: UserProfile | None
+    partial_profile: ProfileExtraction
     calorie_target: CalorieTarget | None
     request_type: Literal["unplanned_meal", "delivery", "general"] | None
     needs_more_info: bool
     structured_response: MealPlan | None
+    meal_plan_retries: int
+    needs_meal_plan_retry: bool
 
 
 class InnerAgentState(BaseInnerAgentState):

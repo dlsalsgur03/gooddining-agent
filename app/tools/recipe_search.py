@@ -11,6 +11,7 @@ def _document_to_dish(document: Document) -> Dish:
     metadata = document.metadata
     return Dish(
         name=metadata["name"],
+        brand=None,
         calories=metadata["calories"],
         macros=MacroTargets(
             protein_g=metadata["protein_g"],

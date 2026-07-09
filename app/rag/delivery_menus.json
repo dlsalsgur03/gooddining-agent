@@ -1,0 +1,2125 @@
+[
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "기네스머쉬룸와퍼",
+    "serving_size_g": 323,
+    "calories": 764,
+    "protein_g": 37,
+    "sugar_g": 13.7,
+    "saturated_fat_g": 13.6
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "기네스와퍼",
+    "serving_size_g": 293,
+    "calories": 778,
+    "protein_g": 36,
+    "sugar_g": 11.9,
+    "saturated_fat_g": 14.3
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "기네스콰트로치즈와퍼",
+    "serving_size_g": 329,
+    "calories": 888,
+    "protein_g": 42,
+    "sugar_g": 13.9,
+    "saturated_fat_g": 21.5
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "기네스할로윈와퍼",
+    "serving_size_g": 385,
+    "calories": 854,
+    "protein_g": 46,
+    "sugar_g": 10.9,
+    "saturated_fat_g": 12.7
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "뉴올리언스 치킨버거",
+    "serving_size_g": 198,
+    "calories": 511,
+    "protein_g": 23,
+    "sugar_g": 3.0,
+    "saturated_fat_g": 5.4
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "BLT 뉴올리언스치킨버거",
+    "serving_size_g": 220,
+    "calories": 571,
+    "protein_g": 27,
+    "sugar_g": 3.6,
+    "saturated_fat_g": 7.9
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "더블롱킹",
+    "serving_size_g": 227,
+    "calories": 546,
+    "protein_g": 26,
+    "sugar_g": 11.5,
+    "saturated_fat_g": 9
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "더블베이컨토마토비프",
+    "serving_size_g": 214,
+    "calories": 585,
+    "protein_g": 29,
+    "sugar_g": 9.1,
+    "saturated_fat_g": 14
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "더블와퍼",
+    "serving_size_g": 360,
+    "calories": 842,
+    "protein_g": 45,
+    "sugar_g": 10.5,
+    "saturated_fat_g": 20
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "더블해쉬불고기",
+    "serving_size_g": 269,
+    "calories": 827,
+    "protein_g": 52,
+    "sugar_g": 10.1,
+    "saturated_fat_g": 19
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "디아블로킹치킨버거",
+    "serving_size_g": 178,
+    "calories": 462,
+    "protein_g": 20,
+    "sugar_g": 5.4,
+    "saturated_fat_g": 5
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "롱치킨버거",
+    "serving_size_g": 210,
+    "calories": 571,
+    "protein_g": 25,
+    "sugar_g": 5.7,
+    "saturated_fat_g": 5.5
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "메가몬스터X",
+    "serving_size_g": 467,
+    "calories": 1243,
+    "protein_g": 56,
+    "sugar_g": 13.4,
+    "saturated_fat_g": 24.2
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "몬스터X",
+    "serving_size_g": 407,
+    "calories": 1140,
+    "protein_g": 51,
+    "sugar_g": 18.6,
+    "saturated_fat_g": 27.6
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "몬스터와퍼",
+    "serving_size_g": 417,
+    "calories": 1055,
+    "protein_g": 52,
+    "sugar_g": 16.9,
+    "saturated_fat_g": 23.1
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "바비큐킹치킨버거",
+    "serving_size_g": 168,
+    "calories": 467,
+    "protein_g": 19,
+    "sugar_g": 3.8,
+    "saturated_fat_g": 5.4
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "베이컨치즈와퍼",
+    "serving_size_g": 315,
+    "calories": 780,
+    "protein_g": 37,
+    "sugar_g": 7.5,
+    "saturated_fat_g": 19
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "불고기롱치킨버거",
+    "serving_size_g": 233,
+    "calories": 712,
+    "protein_g": 26,
+    "sugar_g": 2.7,
+    "saturated_fat_g": 11
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "불고기몬스터",
+    "serving_size_g": 245,
+    "calories": 639,
+    "protein_g": 30,
+    "sugar_g": 9.3,
+    "saturated_fat_g": 11
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "불고기버거",
+    "serving_size_g": 140,
+    "calories": 371,
+    "protein_g": 17,
+    "sugar_g": 9.9,
+    "saturated_fat_g": 8
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "불고기와퍼",
+    "serving_size_g": 278,
+    "calories": 682,
+    "protein_g": 28,
+    "sugar_g": 5.7,
+    "saturated_fat_g": 14
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "불고기와퍼주니어",
+    "serving_size_g": 158,
+    "calories": 380,
+    "protein_g": 18,
+    "sugar_g": 3.6,
+    "saturated_fat_g": 8
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "붉은대게X",
+    "serving_size_g": 372,
+    "calories": 959,
+    "protein_g": 36,
+    "sugar_g": 10.2,
+    "saturated_fat_g": 17
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "붉은대게와퍼",
+    "serving_size_g": 374,
+    "calories": 945,
+    "protein_g": 36,
+    "sugar_g": 8.7,
+    "saturated_fat_g": 15
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "스윗마요킹치킨버거",
+    "serving_size_g": 178,
+    "calories": 447,
+    "protein_g": 20,
+    "sugar_g": 5.0,
+    "saturated_fat_g": 5
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "와퍼",
+    "serving_size_g": 278,
+    "calories": 619,
+    "protein_g": 29,
+    "sugar_g": 10.5,
+    "saturated_fat_g": 13
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "와퍼주니어",
+    "serving_size_g": 158,
+    "calories": 399,
+    "protein_g": 17,
+    "sugar_g": 4.6,
+    "saturated_fat_g": 8
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "치즈버거",
+    "serving_size_g": 133,
+    "calories": 366,
+    "protein_g": 19,
+    "sugar_g": 5.9,
+    "saturated_fat_g": 9
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "치즈와퍼",
+    "serving_size_g": 303,
+    "calories": 716,
+    "protein_g": 33,
+    "sugar_g": 7.1,
+    "saturated_fat_g": 16
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "치즈와퍼주니어",
+    "serving_size_g": 170,
+    "calories": 438,
+    "protein_g": 19,
+    "sugar_g": 4.8,
+    "saturated_fat_g": 10
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "칠리새우게버거",
+    "serving_size_g": 199,
+    "calories": 500,
+    "protein_g": 16,
+    "sugar_g": 3.5,
+    "saturated_fat_g": 5.2
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "칠리크랩버거",
+    "serving_size_g": 363,
+    "calories": 912,
+    "protein_g": 37,
+    "sugar_g": 12.0,
+    "saturated_fat_g": 16
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "칠리크랩통새우",
+    "serving_size_g": 395,
+    "calories": 903,
+    "protein_g": 42,
+    "sugar_g": 9.5,
+    "saturated_fat_g": 15
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "콰트로치즈X",
+    "serving_size_g": 348,
+    "calories": 936,
+    "protein_g": 39,
+    "sugar_g": 7.0,
+    "saturated_fat_g": 24.6
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "콰트로치즈와퍼",
+    "serving_size_g": 309,
+    "calories": 769,
+    "protein_g": 40,
+    "sugar_g": 6.2,
+    "saturated_fat_g": 20
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "콰트로치즈와퍼주니어",
+    "serving_size_g": 173,
+    "calories": 446,
+    "protein_g": 21,
+    "sugar_g": 3.1,
+    "saturated_fat_g": 10
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "킹치킨버거",
+    "serving_size_g": 178,
+    "calories": 532,
+    "protein_g": 20,
+    "sugar_g": 2.7,
+    "saturated_fat_g": 7
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "통새우스테이크버거",
+    "serving_size_g": 345,
+    "calories": 851,
+    "protein_g": 33,
+    "sugar_g": 9.8,
+    "saturated_fat_g": 22
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "통새우와퍼",
+    "serving_size_g": 328,
+    "calories": 741,
+    "protein_g": 34,
+    "sugar_g": 4.8,
+    "saturated_fat_g": 15
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "통새우와퍼주니어",
+    "serving_size_g": 162,
+    "calories": 381,
+    "protein_g": 21,
+    "sugar_g": 5,
+    "saturated_fat_g": 7
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "트러플머쉬룸X",
+    "serving_size_g": 316,
+    "calories": 776,
+    "protein_g": 33,
+    "sugar_g": 14.7,
+    "saturated_fat_g": 14
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "트러플머쉬룸와퍼",
+    "serving_size_g": 331,
+    "calories": 738,
+    "protein_g": 29,
+    "sugar_g": 8,
+    "saturated_fat_g": 12
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "트러플머쉬룸와퍼주니어",
+    "serving_size_g": 172,
+    "calories": 404,
+    "protein_g": 16,
+    "sugar_g": 7.2,
+    "saturated_fat_g": 7
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "할라피뇨불고기버거",
+    "serving_size_g": 150,
+    "calories": 374,
+    "protein_g": 17,
+    "sugar_g": 10.0,
+    "saturated_fat_g": 8
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "할라피뇨와퍼",
+    "serving_size_g": 298,
+    "calories": 625,
+    "protein_g": 29,
+    "sugar_g": 11.5,
+    "saturated_fat_g": 13
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "할라피뇨와퍼주니어",
+    "serving_size_g": 168,
+    "calories": 402,
+    "protein_g": 17,
+    "sugar_g": 5.0,
+    "saturated_fat_g": 8
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "햄버거",
+    "serving_size_g": 121,
+    "calories": 306,
+    "protein_g": 17,
+    "sugar_g": 6.3,
+    "saturated_fat_g": 6
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "베이컨&에그",
+    "serving_size_g": 144,
+    "calories": 323,
+    "protein_g": 12,
+    "sugar_g": 5.8,
+    "saturated_fat_g": 5.6
+  },
+  {
+    "brand": "버거킹",
+    "category": "버거",
+    "name": "햄&에그",
+    "serving_size_g": 165,
+    "calories": 391,
+    "protein_g": 16,
+    "sugar_g": 2.0,
+    "saturated_fat_g": 4
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "기네스머쉬룸와퍼 세트",
+    "calories_min": 894,
+    "calories_max": 1446
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "기네스와퍼 세트",
+    "calories_min": 908,
+    "calories_max": 1460
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "기네스콰트로치즈와퍼 세트",
+    "calories_min": 1018,
+    "calories_max": 1570
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "기네스할로윈와퍼 세트",
+    "calories_min": 984,
+    "calories_max": 1536
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "뉴올리언스 치킨버거 세트",
+    "calories_min": 641,
+    "calories_max": 1193
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "BLT 뉴올리언스치킨버거 세트",
+    "calories_min": 701,
+    "calories_max": 1253
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "더블롱킹 세트",
+    "calories_min": 676,
+    "calories_max": 1228
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "더블베이컨토마토비프 세트",
+    "calories_min": 715,
+    "calories_max": 1299
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "더블와퍼 세트",
+    "calories_min": 1064,
+    "calories_max": 1648
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "더블해쉬불고기 세트",
+    "calories_min": 957,
+    "calories_max": 1541
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "디아블로킹치킨버거 세트",
+    "calories_min": 592,
+    "calories_max": 1176
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "롱치킨버거 세트",
+    "calories_min": 801,
+    "calories_max": 1385
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "메가몬스터X 세트",
+    "calories_min": 1373,
+    "calories_max": 1925
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "몬스터X 세트",
+    "calories_min": 1270,
+    "calories_max": 1854
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "몬스터와퍼 세트",
+    "calories_min": 1185,
+    "calories_max": 1769
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "바비큐킹치킨버거 세트",
+    "calories_min": 597,
+    "calories_max": 1149
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "베이컨치즈와퍼 세트",
+    "calories_min": 910,
+    "calories_max": 1494
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "불고기롱치킨버거 세트",
+    "calories_min": 842,
+    "calories_max": 1426
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "불고기몬스터 세트",
+    "calories_min": 769,
+    "calories_max": 1353
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "불고기버거 세트",
+    "calories_min": 501,
+    "calories_max": 1085
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "불고기와퍼 세트",
+    "calories_min": 812,
+    "calories_max": 1396
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "불고기와퍼주니어 세트",
+    "calories_min": 510,
+    "calories_max": 1094
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "붉은대게X 세트",
+    "calories_min": 1089,
+    "calories_max": 1641
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "붉은대게와퍼 세트",
+    "calories_min": 1075,
+    "calories_max": 1627
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "스윗마요킹치킨버거 세트",
+    "calories_min": 577,
+    "calories_max": 1129
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "와퍼 세트",
+    "calories_min": 750,
+    "calories_max": 1334
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "와퍼주니어 세트",
+    "calories_min": 529,
+    "calories_max": 1113
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "치즈버거 세트",
+    "calories_min": 496,
+    "calories_max": 1080
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "치즈와퍼 세트",
+    "calories_min": 846,
+    "calories_max": 1430
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "치즈와퍼주니어 세트",
+    "calories_min": 568,
+    "calories_max": 1152
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "칠리새우게버거 세트",
+    "calories_min": 630,
+    "calories_max": 1182
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "칠리크랩버거 세트",
+    "calories_min": 1042,
+    "calories_max": 1594
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "칠리크랩통새우 세트",
+    "calories_min": 1033,
+    "calories_max": 1585
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "콰트로치즈X 세트",
+    "calories_min": 1066,
+    "calories_max": 1618
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "콰트로치즈와퍼 세트",
+    "calories_min": 900,
+    "calories_max": 1484
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "콰트로치즈와퍼주니어 세트",
+    "calories_min": 576,
+    "calories_max": 1160
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "킹치킨버거 세트",
+    "calories_min": 662,
+    "calories_max": 1246
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "통새우스테이크버거 세트",
+    "calories_min": 981,
+    "calories_max": 1565
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "통새우와퍼 세트",
+    "calories_min": 871,
+    "calories_max": 1455
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "통새우와퍼주니어 세트",
+    "calories_min": 511,
+    "calories_max": 1095
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "트러플머쉬룸X 세트",
+    "calories_min": 906,
+    "calories_max": 1490
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "트러플머쉬룸와퍼 세트",
+    "calories_min": 868,
+    "calories_max": 1452
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "트러플머쉬룸와퍼주니어 세트",
+    "calories_min": 534,
+    "calories_max": 1118
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "할라피뇨불고기버거 세트",
+    "calories_min": 504,
+    "calories_max": 1056
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "할라피뇨와퍼 세트",
+    "calories_min": 755,
+    "calories_max": 1307
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "할라피뇨와퍼주니어 세트",
+    "calories_min": 532,
+    "calories_max": 1104
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "햄버거 세트",
+    "calories_min": 436,
+    "calories_max": 1020
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "베이컨&에그 세트",
+    "calories_min": 453,
+    "calories_max": 690
+  },
+  {
+    "brand": "버거킹",
+    "category": "세트",
+    "name": "햄&에그 세트",
+    "calories_min": 521,
+    "calories_max": 790
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "21치즈스틱",
+    "serving_size_g": 49,
+    "calories": 155,
+    "protein_g": 5,
+    "sugar_g": 1.5,
+    "saturated_fat_g": 3
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "너겟킹(4조각)",
+    "serving_size_g": 78,
+    "calories": 139,
+    "protein_g": 6,
+    "sugar_g": 0.4,
+    "saturated_fat_g": 2
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "너겟킹(6조각)",
+    "serving_size_g": 117,
+    "calories": 210,
+    "protein_g": 8,
+    "sugar_g": 0.6,
+    "saturated_fat_g": 3
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "너겟킹(10조각)",
+    "serving_size_g": 195,
+    "calories": 347,
+    "protein_g": 14,
+    "sugar_g": 1,
+    "saturated_fat_g": 5
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "바삭킹(2조각)",
+    "serving_size_g": 99,
+    "calories": 272,
+    "protein_g": 15,
+    "sugar_g": 1.7,
+    "saturated_fat_g": 5
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "바삭킹(4조각)",
+    "serving_size_g": 198,
+    "calories": 544,
+    "protein_g": 29,
+    "sugar_g": 3.4,
+    "saturated_fat_g": 10
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "바삭킹(8조각)",
+    "serving_size_g": 396,
+    "calories": 1088,
+    "protein_g": 59,
+    "sugar_g": 6.7,
+    "saturated_fat_g": 20.1
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "쉐이킹프라이 구운갈릭",
+    "serving_size_g": 105,
+    "calories": 292,
+    "protein_g": 4,
+    "sugar_g": 0.5,
+    "saturated_fat_g": 3.1
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "쉐이킹프라이 매콤치즈",
+    "serving_size_g": 105,
+    "calories": 287,
+    "protein_g": 4,
+    "sugar_g": 0.6,
+    "saturated_fat_g": 3.1
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "쉐이킹프라이 스윗어니언",
+    "serving_size_g": 105,
+    "calories": 297,
+    "protein_g": 4,
+    "sugar_g": 1.3,
+    "saturated_fat_g": 3.0
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "어니언링",
+    "serving_size_g": 91,
+    "calories": 332,
+    "protein_g": 5,
+    "sugar_g": 2.5,
+    "saturated_fat_g": 3
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "치즈프라이",
+    "serving_size_g": 139,
+    "calories": 440,
+    "protein_g": 12,
+    "sugar_g": 1.8,
+    "saturated_fat_g": 8
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "칠리크랩 치즈프라이",
+    "serving_size_g": 138,
+    "calories": 369,
+    "protein_g": 11,
+    "sugar_g": 2.0,
+    "saturated_fat_g": 6.7
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "코울슬로",
+    "serving_size_g": 95,
+    "calories": 130,
+    "protein_g": 1,
+    "sugar_g": 13.2,
+    "saturated_fat_g": 0.9
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "코코넛 쉬림프(3조각)",
+    "serving_size_g": 57,
+    "calories": 81,
+    "protein_g": 6,
+    "sugar_g": 1.7,
+    "saturated_fat_g": 0.9
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "코코넛 쉬림프(6조각)",
+    "serving_size_g": 114,
+    "calories": 162,
+    "protein_g": 12,
+    "sugar_g": 3.4,
+    "saturated_fat_g": 1.7
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "코코넛 쉬림프(9조각)",
+    "serving_size_g": 171,
+    "calories": 243,
+    "protein_g": 18,
+    "sugar_g": 5.1,
+    "saturated_fat_g": 2.6
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "콘샐러드",
+    "serving_size_g": 105,
+    "calories": 189,
+    "protein_g": 2,
+    "sugar_g": 6.3,
+    "saturated_fat_g": 1
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "크리미모짜볼(5조각)",
+    "serving_size_g": 70,
+    "calories": 198,
+    "protein_g": 7,
+    "sugar_g": 4,
+    "saturated_fat_g": 1
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "크리미모짜볼(10조각)",
+    "serving_size_g": 140,
+    "calories": 395,
+    "protein_g": 14,
+    "sugar_g": 9,
+    "saturated_fat_g": 1
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "트러플프라이",
+    "serving_size_g": 146,
+    "calories": 445,
+    "protein_g": 10,
+    "sugar_g": 0.3,
+    "saturated_fat_g": 9
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "프렌치프라이(L)",
+    "serving_size_g": 135,
+    "calories": 377,
+    "protein_g": 5,
+    "sugar_g": 0.4,
+    "saturated_fat_g": 4
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "프렌치프라이(R)",
+    "serving_size_g": 102,
+    "calories": 285,
+    "protein_g": 4,
+    "sugar_g": 0.3,
+    "saturated_fat_g": 3
+  },
+  {
+    "brand": "버거킹",
+    "category": "사이드",
+    "name": "해쉬브라운",
+    "serving_size_g": 57,
+    "calories": 169,
+    "protein_g": 2,
+    "sugar_g": 0,
+    "saturated_fat_g": 3
+  },
+  {
+    "brand": "버거킹",
+    "category": "음료",
+    "name": "아메리카노",
+    "serving_size_g": 227,
+    "calories": 6,
+    "protein_g": 0,
+    "sugar_g": 0,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "음료",
+    "name": "아이스아메리카노",
+    "serving_size_g": 330,
+    "calories": 5,
+    "protein_g": 0,
+    "sugar_g": 0,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "음료",
+    "name": "아이스초코",
+    "serving_size_g": 330,
+    "calories": 253,
+    "protein_g": 3,
+    "sugar_g": 31,
+    "saturated_fat_g": 4.3
+  },
+  {
+    "brand": "버거킹",
+    "category": "음료",
+    "name": "핫초코",
+    "serving_size_g": 227,
+    "calories": 210,
+    "protein_g": 2,
+    "sugar_g": 23,
+    "saturated_fat_g": 4
+  },
+  {
+    "brand": "버거킹",
+    "category": "음료",
+    "name": "씨그램(L)",
+    "serving_size_g": 538,
+    "calories": 0,
+    "protein_g": 0,
+    "sugar_g": 0.0,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "음료",
+    "name": "씨그램(R)",
+    "serving_size_g": 376,
+    "calories": 0,
+    "protein_g": 0,
+    "sugar_g": 0.0,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "음료",
+    "name": "제로톡톡 복숭아",
+    "serving_size_g": 330,
+    "calories": 0,
+    "protein_g": 0,
+    "sugar_g": 0.0,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "음료",
+    "name": "제로톡톡 청포도",
+    "serving_size_g": 330,
+    "calories": 0,
+    "protein_g": 0,
+    "sugar_g": 0.0,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "음료",
+    "name": "제로톡톡 체리",
+    "serving_size_g": 330,
+    "calories": 0,
+    "protein_g": 0,
+    "sugar_g": 0.0,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "음료",
+    "name": "코카콜라(L)",
+    "serving_size_g": 538,
+    "calories": 215,
+    "protein_g": 0,
+    "sugar_g": 55.9,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "음료",
+    "name": "코카콜라(R)",
+    "serving_size_g": 376,
+    "calories": 150,
+    "protein_g": 0,
+    "sugar_g": 39.1,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "음료",
+    "name": "코카콜라 제로(L)",
+    "serving_size_g": 538,
+    "calories": 0,
+    "protein_g": 0,
+    "sugar_g": 0,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "음료",
+    "name": "코카콜라 제로(R)",
+    "serving_size_g": 376,
+    "calories": 0,
+    "protein_g": 0,
+    "sugar_g": 0,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "음료",
+    "name": "스프라이트(L)",
+    "serving_size_g": 538,
+    "calories": 237,
+    "protein_g": 0,
+    "sugar_g": 60.2,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "음료",
+    "name": "스프라이트(R)",
+    "serving_size_g": 376,
+    "calories": 165,
+    "protein_g": 0,
+    "sugar_g": 42.1,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "음료",
+    "name": "미닛메이드 오렌지(350ml PET)",
+    "serving_size_g": 350,
+    "calories": 172,
+    "protein_g": 0,
+    "sugar_g": 36,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "아이스크림",
+    "name": "딸기선데",
+    "serving_size_g": 175,
+    "calories": 245,
+    "protein_g": 3,
+    "sugar_g": 38.9,
+    "saturated_fat_g": 6.2
+  },
+  {
+    "brand": "버거킹",
+    "category": "아이스크림",
+    "name": "바나나선데",
+    "serving_size_g": 175,
+    "calories": 266,
+    "protein_g": 4,
+    "sugar_g": 18.8,
+    "saturated_fat_g": 4.9
+  },
+  {
+    "brand": "버거킹",
+    "category": "아이스크림",
+    "name": "바닐라선데",
+    "serving_size_g": 150,
+    "calories": 194,
+    "protein_g": 3,
+    "sugar_g": 26.6,
+    "saturated_fat_g": 3.9
+  },
+  {
+    "brand": "버거킹",
+    "category": "아이스크림",
+    "name": "초코선데",
+    "serving_size_g": 175,
+    "calories": 248,
+    "protein_g": 3,
+    "sugar_g": 41.4,
+    "saturated_fat_g": 1.8
+  },
+  {
+    "brand": "버거킹",
+    "category": "아이스크림",
+    "name": "컵 아이스크림",
+    "serving_size_g": 110,
+    "calories": 142,
+    "protein_g": 2,
+    "sugar_g": 19.5,
+    "saturated_fat_g": 2.8
+  },
+  {
+    "brand": "버거킹",
+    "category": "아이스크림",
+    "name": "콘 아이스크림",
+    "serving_size_g": 95,
+    "calories": 133,
+    "protein_g": 3,
+    "sugar_g": 12.6,
+    "saturated_fat_g": 2.1
+  },
+  {
+    "brand": "버거킹",
+    "category": "토핑/소스",
+    "name": "까망베르치즈소스(pouch)",
+    "serving_size_g": 25,
+    "calories": 132.5,
+    "protein_g": 1,
+    "sugar_g": 1.2,
+    "saturated_fat_g": 2.3
+  },
+  {
+    "brand": "버거킹",
+    "category": "토핑/소스",
+    "name": "디아블로소스(pouch)",
+    "serving_size_g": 25,
+    "calories": 39,
+    "protein_g": 0,
+    "sugar_g": 7.4,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "토핑/소스",
+    "name": "케찹(pouch)",
+    "serving_size_g": 10,
+    "calories": 11,
+    "protein_g": 0,
+    "sugar_g": 2.3,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "토핑/소스",
+    "name": "허니머스타드(pouch)",
+    "serving_size_g": 11,
+    "calories": 32,
+    "protein_g": 0,
+    "sugar_g": 3.1,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "토핑/소스",
+    "name": "스위트칠리소스",
+    "serving_size_g": 25,
+    "calories": 50,
+    "protein_g": 0,
+    "sugar_g": 10.2,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "토핑/소스",
+    "name": "버거패티추가",
+    "serving_size_g": 42,
+    "calories": 114,
+    "protein_g": 8,
+    "sugar_g": 0,
+    "saturated_fat_g": 3.7
+  },
+  {
+    "brand": "버거킹",
+    "category": "토핑/소스",
+    "name": "스테이크패티추가",
+    "serving_size_g": 98,
+    "calories": 309,
+    "protein_g": 19,
+    "sugar_g": 0.7,
+    "saturated_fat_g": 11.1
+  },
+  {
+    "brand": "버거킹",
+    "category": "토핑/소스",
+    "name": "와퍼패티추가",
+    "serving_size_g": 82,
+    "calories": 223,
+    "protein_g": 16,
+    "sugar_g": 0,
+    "saturated_fat_g": 7
+  },
+  {
+    "brand": "버거킹",
+    "category": "토핑/소스",
+    "name": "갈릭페퍼쉬림프 추가",
+    "serving_size_g": 8,
+    "calories": 6,
+    "protein_g": 1,
+    "sugar_g": 0,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "토핑/소스",
+    "name": "베이컨 2장 추가",
+    "serving_size_g": 6,
+    "calories": 26,
+    "protein_g": 2,
+    "sugar_g": 0.7,
+    "saturated_fat_g": 0.7
+  },
+  {
+    "brand": "버거킹",
+    "category": "토핑/소스",
+    "name": "베이컨 4장 추가",
+    "serving_size_g": 12,
+    "calories": 53,
+    "protein_g": 3,
+    "sugar_g": 0,
+    "saturated_fat_g": 1.5
+  },
+  {
+    "brand": "버거킹",
+    "category": "토핑/소스",
+    "name": "치즈 1장 추가",
+    "serving_size_g": 12,
+    "calories": 41,
+    "protein_g": 3,
+    "sugar_g": 0,
+    "saturated_fat_g": 2.2
+  },
+  {
+    "brand": "버거킹",
+    "category": "토핑/소스",
+    "name": "할라피뇨 2개 추가",
+    "serving_size_g": 10,
+    "calories": 3,
+    "protein_g": 0.04,
+    "sugar_g": 0.5,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "토핑/소스",
+    "name": "할라피뇨 4개 추가",
+    "serving_size_g": 20,
+    "calories": 6,
+    "protein_g": 0.08,
+    "sugar_g": 1,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "토핑/소스",
+    "name": "화이트체다치즈 1장 추가",
+    "serving_size_g": 13,
+    "calories": 48,
+    "protein_g": 3,
+    "sugar_g": 0,
+    "saturated_fat_g": 2.4
+  },
+  {
+    "brand": "버거킹",
+    "category": "토핑/소스",
+    "name": "구운갈릭 시즈닝",
+    "serving_size_g": 3,
+    "calories": 10,
+    "protein_g": 0,
+    "sugar_g": 1.9,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "토핑/소스",
+    "name": "매콤치즈 시즈닝",
+    "serving_size_g": 3,
+    "calories": 10,
+    "protein_g": 0,
+    "sugar_g": 1.8,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "버거킹",
+    "category": "토핑/소스",
+    "name": "스윗어니언 시즈닝",
+    "serving_size_g": 3,
+    "calories": 9,
+    "protein_g": 0,
+    "sugar_g": 1.3,
+    "saturated_fat_g": 0
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "비엘티",
+    "serving_size_g": 182,
+    "calories": 300,
+    "protein_g": 15.9,
+    "sugar_g": 7.9,
+    "saturated_fat_g": 3.7
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "치킨 데리야끼",
+    "serving_size_g": 255,
+    "calories": 314,
+    "protein_g": 26.5,
+    "sugar_g": 10.1,
+    "saturated_fat_g": 1.2
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "에그마요",
+    "serving_size_g": 238,
+    "calories": 416,
+    "protein_g": 16.4,
+    "sugar_g": 7.7,
+    "saturated_fat_g": 4.8
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "햄",
+    "serving_size_g": 220,
+    "calories": 262,
+    "protein_g": 19,
+    "sugar_g": 8.4,
+    "saturated_fat_g": 1
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "이탈리안 비엠티",
+    "serving_size_g": 228,
+    "calories": 388,
+    "protein_g": 21,
+    "sugar_g": 8.6,
+    "saturated_fat_g": 5.9
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "풀드포크 바비큐",
+    "serving_size_g": 235,
+    "calories": 327,
+    "protein_g": 24.8,
+    "sugar_g": 7.8,
+    "saturated_fat_g": 2.1
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "로스트 치킨",
+    "serving_size_g": 237,
+    "calories": 300,
+    "protein_g": 26,
+    "sugar_g": 8.7,
+    "saturated_fat_g": 1.3
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "로티세리 바비큐 치킨",
+    "serving_size_g": 249,
+    "calories": 327,
+    "protein_g": 29.1,
+    "sugar_g": 7.8,
+    "saturated_fat_g": 2.5
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "쉬림프",
+    "serving_size_g": 209,
+    "calories": 241,
+    "protein_g": 16.3,
+    "sugar_g": 7.9,
+    "saturated_fat_g": 0.6
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "스파이시 이탈리안",
+    "serving_size_g": 224,
+    "calories": 464,
+    "protein_g": 20.7,
+    "sugar_g": 8.7,
+    "saturated_fat_g": 9.1
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "스테이크&치즈(아메리칸치즈 포함)",
+    "serving_size_g": 245,
+    "calories": 355,
+    "protein_g": 28.1,
+    "sugar_g": 8.8,
+    "saturated_fat_g": 4.2
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "써브웨이 클럽(터키)",
+    "serving_size_g": 206,
+    "calories": 295,
+    "protein_g": 18.7,
+    "sugar_g": 6.1,
+    "saturated_fat_g": 2.2
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "베지",
+    "serving_size_g": 164,
+    "calories": 209,
+    "protein_g": 9.2,
+    "sugar_g": 7.6,
+    "saturated_fat_g": 0.6
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "참치",
+    "serving_size_g": 238,
+    "calories": 316,
+    "protein_g": 26.9,
+    "sugar_g": 7.6,
+    "saturated_fat_g": 1.4
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "치킨 슬라이스",
+    "serving_size_g": 221,
+    "calories": 265,
+    "protein_g": 18.6,
+    "sugar_g": 8.7,
+    "saturated_fat_g": 0.9
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "터키",
+    "serving_size_g": 211,
+    "calories": 262,
+    "protein_g": 17.4,
+    "sugar_g": 6.3,
+    "saturated_fat_g": 0.7
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "치킨 베이컨 아보카도",
+    "serving_size_g": 246,
+    "calories": 355,
+    "protein_g": 20.2,
+    "sugar_g": 9,
+    "saturated_fat_g": 3.2
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "터키 베이컨 아보카도",
+    "serving_size_g": 236,
+    "calories": 351,
+    "protein_g": 19.1,
+    "sugar_g": 6.6,
+    "saturated_fat_g": 3
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "스파이시 쉬림프",
+    "serving_size_g": 215,
+    "calories": 247,
+    "protein_g": 16.7,
+    "sugar_g": 9.7,
+    "saturated_fat_g": 1.0
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "에그 슬라이스",
+    "serving_size_g": 214,
+    "calories": 279,
+    "protein_g": 15.2,
+    "sugar_g": 7.6,
+    "saturated_fat_g": 2.3
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "안창비프",
+    "serving_size_g": 235,
+    "calories": 342,
+    "protein_g": 21.6,
+    "sugar_g": 8.3,
+    "saturated_fat_g": 4.3
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "안창비프&New머쉬룸(F)",
+    "serving_size_g": 235,
+    "calories": 292,
+    "protein_g": 16.5,
+    "sugar_g": 8,
+    "saturated_fat_g": 2.5
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "안창비프&New머쉬룸(S)",
+    "serving_size_g": 225,
+    "calories": 283,
+    "protein_g": 15.2,
+    "sugar_g": 5.7,
+    "saturated_fat_g": 2.2
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "New머쉬룸(F)",
+    "serving_size_g": 235,
+    "calories": 245,
+    "protein_g": 11.8,
+    "sugar_g": 7.7,
+    "saturated_fat_g": 0.6
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "New머쉬룸(S)",
+    "serving_size_g": 226,
+    "calories": 224,
+    "protein_g": 10,
+    "sugar_g": 5.9,
+    "saturated_fat_g": 0.4
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "피자섭",
+    "serving_size_g": 205,
+    "calories": 551,
+    "protein_g": 22.9,
+    "sugar_g": 5.9,
+    "saturated_fat_g": 9.5
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "잠봉",
+    "serving_size_g": 215,
+    "calories": 376,
+    "protein_g": 18.3,
+    "sugar_g": 6,
+    "saturated_fat_g": 4.7
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "잠봉 폴러스",
+    "serving_size_g": 251,
+    "calories": 475,
+    "protein_g": 24.3,
+    "sugar_g": 6.4,
+    "saturated_fat_g": 7.3
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "이탈리안 비엠티(J)",
+    "serving_size_g": 215,
+    "calories": 430,
+    "protein_g": 19.2,
+    "sugar_g": 6.2,
+    "saturated_fat_g": 7.2
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "써브웨이 클럽(J)",
+    "serving_size_g": 204,
+    "calories": 315,
+    "protein_g": 18.2,
+    "sugar_g": 6.1,
+    "saturated_fat_g": 3
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샌드위치",
+    "name": "써브웨이 클럽(JC)",
+    "serving_size_g": 260,
+    "calories": 373,
+    "protein_g": 27.4,
+    "sugar_g": 7.2,
+    "saturated_fat_g": 3.3
+  },
+  {
+    "brand": "서브웨이",
+    "category": "아침메뉴 샌드위치",
+    "name": "햄, 에그&치즈",
+    "serving_size_g": 181,
+    "calories": 319,
+    "protein_g": 20.3,
+    "sugar_g": 6.5,
+    "saturated_fat_g": 3.2
+  },
+  {
+    "brand": "서브웨이",
+    "category": "아침메뉴 샌드위치",
+    "name": "웨스턴, 에그&치즈",
+    "serving_size_g": 235,
+    "calories": 315,
+    "protein_g": 18.2,
+    "sugar_g": 7.8,
+    "saturated_fat_g": 3.1
+  },
+  {
+    "brand": "서브웨이",
+    "category": "아침메뉴 샌드위치",
+    "name": "잠봉, 에그&치즈",
+    "serving_size_g": 170,
+    "calories": 319,
+    "protein_g": 19.1,
+    "sugar_g": 6.5,
+    "saturated_fat_g": 4.8
+  },
+  {
+    "brand": "서브웨이",
+    "category": "아침메뉴 샌드위치",
+    "name": "웨스턴, 에그&치즈(J)",
+    "serving_size_g": 250,
+    "calories": 340,
+    "protein_g": 18,
+    "sugar_g": 6.5,
+    "saturated_fat_g": 4
+  },
+  {
+    "brand": "서브웨이",
+    "category": "아침메뉴 랩/그릴드랩",
+    "name": "햄, 에그&치즈 랩/그릴드랩",
+    "serving_size_g": 168,
+    "calories": 311,
+    "protein_g": 16.9,
+    "sugar_g": 3.5,
+    "saturated_fat_g": 5.1
+  },
+  {
+    "brand": "서브웨이",
+    "category": "아침메뉴 랩/그릴드랩",
+    "name": "로티세리 치킨, 에그&치즈 랩/그릴드랩",
+    "serving_size_g": 195,
+    "calories": 306,
+    "protein_g": 14.9,
+    "sugar_g": 3,
+    "saturated_fat_g": 5
+  },
+  {
+    "brand": "서브웨이",
+    "category": "아침메뉴 랩/그릴드랩",
+    "name": "잠봉, 에그&치즈 랩/그릴드랩",
+    "serving_size_g": 166,
+    "calories": 364,
+    "protein_g": 17.1,
+    "sugar_g": 3,
+    "saturated_fat_g": 7.4
+  },
+  {
+    "brand": "서브웨이",
+    "category": "아침메뉴 랩/그릴드랩",
+    "name": "웨스턴, 에그&치즈 랩/그릴드랩(J)",
+    "serving_size_g": 193,
+    "calories": 331,
+    "protein_g": 14.7,
+    "sugar_g": 4.7,
+    "saturated_fat_g": 5.9
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "그린",
+    "serving_size_g": 214,
+    "calories": 91.8,
+    "protein_g": 4.8,
+    "sugar_g": 5.1,
+    "saturated_fat_g": 2.5
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "참치 아보카도",
+    "serving_size_g": 319,
+    "calories": 255,
+    "protein_g": 23,
+    "sugar_g": 5.5,
+    "saturated_fat_g": 4.1
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "에그마요 베이컨",
+    "serving_size_g": 299,
+    "calories": 352,
+    "protein_g": 15.5,
+    "sugar_g": 5.4,
+    "saturated_fat_g": 8.1
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "로티세리 치킨 더블치즈",
+    "serving_size_g": 318,
+    "calories": 294,
+    "protein_g": 30.4,
+    "sugar_g": 5.3,
+    "saturated_fat_g": 6.2
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "로스트 치킨 베이컨",
+    "serving_size_g": 296,
+    "calories": 216,
+    "protein_g": 22.5,
+    "sugar_g": 5.8,
+    "saturated_fat_g": 4.1
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "쉬림프 아보카도",
+    "serving_size_g": 290,
+    "calories": 182,
+    "protein_g": 12.6,
+    "sugar_g": 5.8,
+    "saturated_fat_g": 3.3
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "스테이크&머쉬룸",
+    "serving_size_g": 314,
+    "calories": 193,
+    "protein_g": 20.2,
+    "sugar_g": 5.8,
+    "saturated_fat_g": 4
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "풀드포크 타코",
+    "serving_size_g": 526,
+    "calories": 820,
+    "protein_g": 35.9,
+    "sugar_g": 12.5,
+    "saturated_fat_g": 15.9
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "로티세리 치킨 타코",
+    "serving_size_g": 526,
+    "calories": 802,
+    "protein_g": 37.8,
+    "sugar_g": 12.4,
+    "saturated_fat_g": 14.4
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "스파이시 쉬림프 타코",
+    "serving_size_g": 520,
+    "calories": 713,
+    "protein_g": 27.4,
+    "sugar_g": 15.6,
+    "saturated_fat_g": 13.6
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "그린(G)",
+    "serving_size_g": 274,
+    "calories": 237,
+    "protein_g": 8.6,
+    "sugar_g": 5.5,
+    "saturated_fat_g": 2.9
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "참치 아보카도(G)",
+    "serving_size_g": 379,
+    "calories": 400,
+    "protein_g": 26.9,
+    "sugar_g": 5.9,
+    "saturated_fat_g": 4.5
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "에그마요 베이컨(G)",
+    "serving_size_g": 359,
+    "calories": 497,
+    "protein_g": 19.3,
+    "sugar_g": 5.8,
+    "saturated_fat_g": 8.5
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "로티세리 치킨 더블치즈(G)",
+    "serving_size_g": 378,
+    "calories": 439,
+    "protein_g": 34.2,
+    "sugar_g": 5.3,
+    "saturated_fat_g": 6.6
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "로스트 치킨 베이컨(G)",
+    "serving_size_g": 356,
+    "calories": 362,
+    "protein_g": 26.3,
+    "sugar_g": 6.2,
+    "saturated_fat_g": 4.5
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "쉬림프 아보카도(G)",
+    "serving_size_g": 350,
+    "calories": 327,
+    "protein_g": 16.5,
+    "sugar_g": 6.2,
+    "saturated_fat_g": 3.7
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "스테이크&머쉬룸(G)",
+    "serving_size_g": 374,
+    "calories": 338,
+    "protein_g": 24,
+    "sugar_g": 6.2,
+    "saturated_fat_g": 4.4
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "풀드포크 타코(G)",
+    "serving_size_g": 606,
+    "calories": 968,
+    "protein_g": 39.9,
+    "sugar_g": 13.3,
+    "saturated_fat_g": 16.3
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "로티세리 치킨 타코(G)",
+    "serving_size_g": 606,
+    "calories": 951,
+    "protein_g": 41.8,
+    "sugar_g": 13.2,
+    "saturated_fat_g": 14.8
+  },
+  {
+    "brand": "서브웨이",
+    "category": "샐러드",
+    "name": "스파이시 쉬림프 타코(G)",
+    "serving_size_g": 600,
+    "calories": 861,
+    "protein_g": 31.4,
+    "sugar_g": 16.4,
+    "saturated_fat_g": 14
+  },
+  {
+    "brand": "서브웨이",
+    "category": "랩/그릴드랩",
+    "name": "치킨 베이컨 미니 랩",
+    "serving_size_g": 161,
+    "calories": 391,
+    "protein_g": 20.8,
+    "sugar_g": 5.5,
+    "saturated_fat_g": 7.4
+  },
+  {
+    "brand": "서브웨이",
+    "category": "랩/그릴드랩",
+    "name": "쉬림프 에그마요 랩",
+    "serving_size_g": 253,
+    "calories": 516,
+    "protein_g": 20.1,
+    "sugar_g": 7.4,
+    "saturated_fat_g": 9.5
+  },
+  {
+    "brand": "서브웨이",
+    "category": "랩/그릴드랩",
+    "name": "스테이크&치즈 아보카도 랩",
+    "serving_size_g": 249,
+    "calories": 418,
+    "protein_g": 22.3,
+    "sugar_g": 5.3,
+    "saturated_fat_g": 9.8
+  },
+  {
+    "brand": "서브웨이",
+    "category": "랩/그릴드랩",
+    "name": "치킨 베이컨 미니 그릴드랩",
+    "serving_size_g": 154,
+    "calories": 392,
+    "protein_g": 20.7,
+    "sugar_g": 5.5,
+    "saturated_fat_g": 7.4
+  },
+  {
+    "brand": "서브웨이",
+    "category": "랩/그릴드랩",
+    "name": "쉬림프 에그 그릴드랩",
+    "serving_size_g": 226,
+    "calories": 373,
+    "protein_g": 17.9,
+    "sugar_g": 7.8,
+    "saturated_fat_g": 5.8
+  },
+  {
+    "brand": "서브웨이",
+    "category": "랩/그릴드랩",
+    "name": "스테이크&치즈아보카도 그릴드랩",
+    "serving_size_g": 217,
+    "calories": 473,
+    "protein_g": 22,
+    "sugar_g": 4.7,
+    "saturated_fat_g": 9.8
+  }
+]

@@ -78,6 +78,14 @@ class MealPlan(BaseModel):
     meals: list[Meal]
 
 
+class MealNutritionEstimate(BaseModel):
+    calories: float
+    macros: MacroTargets
+    disclaimer: str = (
+        "이 수치는 LLM이 일반 지식으로 추정한 값으로, 실제 영양성분과 다를 수 있습니다."
+    )
+
+
 class DeliveryMenuItem(BaseModel):
     brand: str
     category: str

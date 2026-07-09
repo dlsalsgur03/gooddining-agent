@@ -157,7 +157,7 @@ graph TD;
 
 ### 3.5 OutputParser / 구조화 출력
 
-- `UserProfile` (Pydantic): 성별, 나이, 키, 몸무게, 활동수준, 목표, 알러지/비선호 재료 — 대화에서 정보를 추출할 때 `ChatOpenAI(...).with_structured_output(_ProfileExtraction)`으로 구조화
+- `UserProfile` (Pydantic): 성별, 나이, 키, 몸무게, 활동수준, 목표, 알러지/비선호 재료 — 대화에서 정보를 추출할 때 `ChatOpenAI(...).with_structured_output(ProfileExtraction)`으로 구조화(여러 턴에 걸쳐 언급된 정보는 `partial_profile` 상태에 누적·병합됨)
 - `MealPlan` (Pydantic): 일일 목표 칼로리, 영양성분(g), 끼니별 추천 요리 및 레시피 리스트 — `create_agent(..., response_format=MealPlan)`으로 내부 agent의 최종 응답을 구조화(`structured_response`로 노출), FastAPI 레이어에서 이를 사람이 읽는 텍스트로 포맷팅해 응답
 
 ---
@@ -194,19 +194,22 @@ OPENAI_API_KEY=sk-...
 uvicorn app.main:app --reload --port 8000
 ```
 
-- 채팅 UI: `http://localhost:8000/static/index.html` (정적 HTML/JS, `fetch`로 `/chat` 호출)
+- 채팅 UI: `http://localhost:8000/` (`GET /`이 `static/index.html`을 직접 서빙)
 - 상태 확인: `GET /health`
 - 대화 API: `POST /chat` — body: `{"user_id": "...", "session_id": "...", "message": "..."}`
   - `session_id`는 LangGraph `MemorySaver`의 `thread_id`로 연결되어 세션 내 멀티턴 대화를 유지
   - `user_id`는 SQLite 장기 메모리 키로 사용되어, 새 세션에서도 이전 프로필을 재입력 없이 불러옴
+  - 응답에 `meal_plan`이 포함되면 그 날짜(서버 기준 오늘)의 식단 기록으로 자동 저장됨(같은 날 여러 번 생성하면 최신 것으로 덮어씀)
+- 내 정보 조회: `GET /profile/{user_id}` — 저장된 프로필 조회(읽기 전용, 프로필 입력/수정은 채팅으로만 가능)
+- 식단 기록: `GET /meals/{user_id}/dates` — 기록이 있는 날짜 목록(달력 표시용) / `GET /meals/{user_id}/{date}` — 특정 날짜(`YYYY-MM-DD`)의 식단 조회
 
 ### 4.5 프로젝트 구조
 
 ```
 gooddining-agent/
 ├── app/
-│   ├── main.py                        # FastAPI 앱 (/health, /, /chat)
-│   ├── agent.py                       # 바깥쪽 StateGraph 조립 (조건부 분기 2개 + create_agent 서브그래프)
+│   ├── main.py                        # FastAPI 앱 (/, /health, /chat, /profile, /meals)
+│   ├── agent.py                       # 바깥쪽 StateGraph 조립 (조건부 분기 3개 + create_agent 서브그래프)
 │   ├── state.py                       # AgentState, InnerAgentState (TypedDict)
 │   ├── schemas.py                     # Pydantic 모델 (UserProfile, MealPlan, DeliveryMenuItem 등)
 │   ├── tools/
@@ -214,7 +217,8 @@ gooddining-agent/
 │   │   ├── agent_tools.py             # 위 계산 함수를 감싼 @tool 3종
 │   │   ├── recipe_search.py           # search_recipes @tool
 │   │   ├── delivery_menu_search.py    # search_delivery_menu @tool
-│   │   └── meal_estimation.py         # estimate_meal_nutrition @tool
+│   │   ├── meal_estimation.py         # estimate_meal_nutrition @tool
+│   │   └── web_food_search.py         # search_web_food @tool (Tavily 웹 검색 보완)
 │   ├── rag/
 │   │   ├── recipes.json               # 레시피 데이터 20개
 │   │   ├── delivery_menus.json        # 배달 프랜차이즈 메뉴 데이터 227개 (버거킹+서브웨이)
@@ -223,15 +227,19 @@ gooddining-agent/
 │   │   └── vectorstore.py             # InMemoryVectorStore 구성 (레시피/배달메뉴 공용)
 │   ├── memory/
 │   │   ├── profile_store.py           # ProfileStore Protocol, InMemoryProfileStore
-│   │   └── sqlite_profile_store.py    # SQLiteProfileStore (장기 메모리, user_id 키)
+│   │   ├── sqlite_profile_store.py    # SQLiteProfileStore (장기 메모리, user_id 키)
+│   │   ├── meal_history_store.py      # MealHistoryStore Protocol, InMemoryMealHistoryStore
+│   │   └── sqlite_meal_history_store.py  # SQLiteMealHistoryStore (날짜별 식단 기록, user_id+date 키)
 │   └── middleware/
 │       ├── logging_middleware.py      # LoggingMiddleware
-│       └── guardrail_middleware.py    # GuardrailMiddleware
-├── static/                            # 채팅 UI (정적 HTML/JS)
+│       ├── guardrail_middleware.py    # GuardrailMiddleware
+│       ├── duplicate_guard_middleware.py  # DuplicateToolCallGuardMiddleware
+│       └── search_budget_middleware.py    # SearchCallBudgetMiddleware
+├── static/                            # 채팅 UI (정적 HTML/JS) — 채팅 + 내 정보 팝업 + 날짜별 식단 달력
 │   ├── index.html
 │   ├── style.css
 │   └── chat.js
-├── tests/                             # pytest 단위 테스트 (53개)
+├── tests/                             # pytest 단위 테스트
 ├── requirements.txt
 ├── .env.example
 └── README.md

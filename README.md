@@ -168,6 +168,7 @@ graph TD;
 
 - Python 3.11 이상
 - OpenAI(또는 사용하는 LLM 프로바이더) API Key
+- Tavily API Key
 
 ### 4.2 설치
 
@@ -183,6 +184,7 @@ pip install -r requirements.txt
 
 ```
 OPENAI_API_KEY=sk-...
+TAVILY_API_KEY=tvly-dev-...
 # 필요 시 다른 프로바이더 키 추가
 ```
 

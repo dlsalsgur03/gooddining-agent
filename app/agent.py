@@ -64,6 +64,13 @@ class _ProfileExtraction(BaseModel):
     goal: Goal | None = None
 
 
+_PROFILE_EXTRACTION_SYSTEM_PROMPT = (
+    "사용자 메시지에서 명시적으로 언급된 신체 정보/목표만 추출하세요. "
+    "메시지에 직접 언급되지 않은 필드는 절대 추측하거나 임의의 값으로 채우지 말고 "
+    "반드시 null(비워둠)로 남기세요."
+)
+
+
 def _is_profile_complete(extraction: _ProfileExtraction) -> bool:
     return all(
         value is not None
@@ -154,7 +161,12 @@ def route_after_check_profile(state: AgentState) -> str:
 
 def check_completeness(state: AgentState) -> dict:
     latest_message = _latest_human_text(state["messages"])
-    extraction = _get_profile_extraction_llm().invoke(latest_message)
+    extraction = _get_profile_extraction_llm().invoke(
+        [
+            SystemMessage(content=_PROFILE_EXTRACTION_SYSTEM_PROMPT),
+            HumanMessage(content=latest_message),
+        ]
+    )
 
     if not _is_profile_complete(extraction):
         return {"needs_more_info": True}

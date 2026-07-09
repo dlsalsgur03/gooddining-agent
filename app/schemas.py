@@ -29,8 +29,10 @@ class UserProfile(BaseModel):
     weight_kg: float = Field(gt=0)
     activity_level: ActivityLevel
     goal: Goal
-    allergies: list[str] = Field(default_factory=list)
-    disliked_ingredients: list[str] = Field(default_factory=list)
+    # 기본값을 두지 않는다: OpenAI 구조화 출력/strict Tool 스키마는 모든 필드가
+    # required이길 요구한다(선택 항목은 default가 아니라 값 자체를 빈 리스트로 채워야 함).
+    allergies: list[str]
+    disliked_ingredients: list[str]
 
 
 class MacroTargets(BaseModel):
@@ -63,8 +65,8 @@ class Dish(BaseModel):
     name: str
     calories: float
     macros: MacroTargets
-    recipe: str | None = None
-    tags: list[str] = Field(default_factory=list)
+    recipe: str | None
+    tags: list[str]
 
 
 class Meal(BaseModel):

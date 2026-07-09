@@ -25,13 +25,14 @@ def _document_to_dish(document: Document) -> Dish:
 @tool
 def search_recipes(
     query: str,
-    exclude_ingredients: list[str] | None = None,
-    max_results: int = 3,
+    exclude_ingredients: list[str] | None,
+    max_results: int,
 ) -> list[Dish]:
     """목표 칼로리·영양성분에 맞는 레시피를 검색한다.
 
     query에는 원하는 특징(예: '저칼로리 고단백 닭가슴살 요리')을 자연어로 담는다.
     exclude_ingredients에 알러지·비선호 재료를 넣으면 해당 재료가 포함된 레시피는 제외된다.
+    없으면 빈 리스트나 null을 전달한다. max_results는 원하는 결과 개수(예: 3)를 명시한다.
     """
     exclude = set(exclude_ingredients or [])
     vectorstore = get_recipe_vectorstore()

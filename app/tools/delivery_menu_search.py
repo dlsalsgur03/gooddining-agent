@@ -9,13 +9,14 @@ from app.schemas import DeliveryMenuItem
 @tool
 def search_delivery_menu(
     query: str,
-    brand: str | None = None,
-    max_results: int = 3,
+    brand: str | None,
+    max_results: int,
 ) -> list[DeliveryMenuItem]:
     """배달 프랜차이즈 메뉴 중 잔여 칼로리·영양성분 예산에 맞는 메뉴를 검색한다.
 
     query에는 원하는 특징(예: '저칼로리 치킨 샌드위치')을 자연어로 담는다.
-    brand를 지정하면(예: '버거킹', '서브웨이') 해당 브랜드로만 필터링한다.
+    brand를 지정하면(예: '버거킹', '서브웨이') 해당 브랜드로만 필터링하고, 특정 브랜드가 없으면 null을 전달한다.
+    max_results는 원하는 결과 개수(예: 3)를 명시한다.
     """
     vectorstore = get_delivery_menu_vectorstore()
     filter_fn = (lambda doc: doc.metadata.get("brand") == brand) if brand else None

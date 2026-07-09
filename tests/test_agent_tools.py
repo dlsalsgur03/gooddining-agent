@@ -13,6 +13,8 @@ PROFILE_INPUT = {
     "weight_kg": 78,
     "activity_level": "moderate",
     "goal": "lose",
+    "allergies": [],
+    "disliked_ingredients": [],
 }
 
 

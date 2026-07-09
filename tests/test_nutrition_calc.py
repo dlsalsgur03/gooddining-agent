@@ -26,6 +26,8 @@ def make_profile(**overrides):
         weight_kg=78,
         activity_level=ActivityLevel.MODERATE,
         goal=Goal.LOSE,
+        allergies=[],
+        disliked_ingredients=[],
     )
     defaults.update(overrides)
     return UserProfile(**defaults)

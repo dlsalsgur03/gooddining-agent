@@ -46,7 +46,9 @@ class TestSearchRecipesTool:
         vectorstore = self._build_fake_vectorstore()
         monkeypatch.setattr(recipe_search, "get_recipe_vectorstore", lambda: vectorstore)
 
-        results = recipe_search.search_recipes.invoke({"query": "아무 요리", "max_results": 2})
+        results = recipe_search.search_recipes.invoke(
+            {"query": "아무 요리", "exclude_ingredients": [], "max_results": 2}
+        )
 
         assert len(results) == 2
 
@@ -54,7 +56,9 @@ class TestSearchRecipesTool:
         vectorstore = self._build_fake_vectorstore()
         monkeypatch.setattr(recipe_search, "get_recipe_vectorstore", lambda: vectorstore)
 
-        results = recipe_search.search_recipes.invoke({"query": "아무 요리", "max_results": 1})
+        results = recipe_search.search_recipes.invoke(
+            {"query": "아무 요리", "exclude_ingredients": [], "max_results": 1}
+        )
 
         dish = results[0]
         assert dish.calories > 0

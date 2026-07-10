@@ -11,6 +11,7 @@ client = TestClient(app)
 
 def make_meal_plan():
     return MealPlan(
+        summary="테스트용 식단 요약",
         daily_calorie_target=2000.0,
         daily_macros=MacroTargets(protein_g=150, carbs_g=200, fat_g=60),
         meals=[
@@ -85,6 +86,8 @@ def make_profile(**overrides):
         goal=Goal.LOSE,
         allergies=[],
         disliked_ingredients=[],
+        custom_bmr_kcal=None,
+        custom_tdee_kcal=None,
     )
     defaults.update(overrides)
     return UserProfile(**defaults)

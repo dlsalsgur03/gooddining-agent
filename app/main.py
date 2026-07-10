@@ -20,7 +20,8 @@ from app.agent import build_graph
 from app.memory.sqlite_meal_history_store import SQLiteMealHistoryStore
 from app.memory.sqlite_profile_store import SQLiteProfileStore
 from app.middleware.guardrail_middleware import LOW_CALORIE_WARNING, SKIP_MEAL_APPENDIX
-from app.schemas import MealPlan, UserProfile
+from app.schemas import MealPlan, ProfileView
+from app.tools import nutrition_calc
 
 # 데이터셋에 없는 메뉴를 계속 검색하는 등 agent의 Tool 호출 루프가 수렴하지 못할 때
 # 무한 반복(및 불필요한 API 비용)을 막기 위한 상한. 정상 시나리오(검색 여러 번 + 검증 재시도 2회)는
@@ -66,6 +67,7 @@ class ChatResponse(BaseModel):
 def _format_meal_plan(meal_plan: MealPlan) -> str:
     macros = meal_plan.daily_macros
     lines = [
+        f"{meal_plan.summary}\n\n"
         f"오늘의 목표 칼로리: {meal_plan.daily_calorie_target:.0f}kcal "
         f"(단백질 {macros.protein_g:.0f}g / 탄수화물 {macros.carbs_g:.0f}g / 지방 {macros.fat_g:.0f}g)"
     ]
@@ -91,6 +93,12 @@ def _extract_warnings(content: str) -> list[str]:
     return warnings
 
 
+NEW_PROFILE_METABOLISM_INVITE = (
+    "\n\n(참고: 혹시 본인의 정확한 기초대사량(BMR)·활동대사량(TDEE)을 알고 계시면 "
+    "채팅으로 알려주세요 — 그 값으로 더 정확하게 계산해드릴게요!)"
+)
+
+
 def _build_reply(result: dict) -> tuple[str, MealPlan | None]:
     meal_plan = result.get("structured_response")
     last_message_content = result["messages"][-1].content
@@ -102,6 +110,11 @@ def _build_reply(result: dict) -> tuple[str, MealPlan | None]:
     reply = _format_meal_plan(meal_plan)
     if warnings:
         reply += "\n\n" + "\n".join(warnings)
+
+    profile = result.get("profile")
+    if result.get("profile_just_created") and profile is not None and profile.custom_bmr_kcal is None:
+        reply += NEW_PROFILE_METABOLISM_INVITE
+
     return reply, meal_plan
 
 
@@ -149,12 +162,25 @@ def chat(request: ChatRequest):
     )
 
 
-@app.get("/profile/{user_id}", response_model=UserProfile)
+@app.get("/profile/{user_id}", response_model=ProfileView)
 def get_profile(user_id: str):
     profile = _profile_store.get(user_id)
     if profile is None:
         raise HTTPException(status_code=404, detail="저장된 프로필이 없습니다.")
-    return profile
+
+    is_custom = profile.custom_bmr_kcal is not None and profile.custom_tdee_kcal is not None
+    if is_custom:
+        bmr_kcal, tdee_kcal = profile.custom_bmr_kcal, profile.custom_tdee_kcal
+    else:
+        bmr_tdee = nutrition_calc.calculate_bmr_tdee(profile)
+        bmr_kcal, tdee_kcal = bmr_tdee.bmr_kcal, bmr_tdee.tdee_kcal
+
+    return ProfileView(
+        **profile.model_dump(),
+        bmr_kcal=bmr_kcal,
+        tdee_kcal=tdee_kcal,
+        is_custom_metabolism=is_custom,
+    )
 
 
 @app.get("/meals/{user_id}/dates")

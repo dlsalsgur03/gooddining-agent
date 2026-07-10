@@ -15,6 +15,8 @@ PROFILE_INPUT = {
     "goal": "lose",
     "allergies": [],
     "disliked_ingredients": [],
+    "custom_bmr_kcal": None,
+    "custom_tdee_kcal": None,
 }
 
 

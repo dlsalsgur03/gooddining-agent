@@ -18,7 +18,16 @@ from app.middleware.duplicate_guard_middleware import DuplicateToolCallGuardMidd
 from app.middleware.guardrail_middleware import GuardrailMiddleware
 from app.middleware.logging_middleware import LoggingMiddleware
 from app.middleware.search_budget_middleware import SearchCallBudgetMiddleware
-from app.schemas import ActivityLevel, Gender, Goal, MealPlan, ProfileExtraction, UserProfile
+from app.middleware.tool_call_budget_middleware import ToolCallBudgetMiddleware
+from app.schemas import (
+    ActivityLevel,
+    BmrTdeeResult,
+    Gender,
+    Goal,
+    MealPlan,
+    ProfileExtraction,
+    UserProfile,
+)
 from app.state import AgentState, InnerAgentState
 from app.tools import nutrition_calc
 from app.tools.agent_tools import (
@@ -54,6 +63,7 @@ SYSTEM_PROMPT = (
     "검색 결과가 완벽하게 이상적이지 않더라도, 이미 얻은 결과 중 가장 적합한 것을 선택해 식단을 완성하세요. "
     "search_recipes와 search_delivery_menu는 대화 전체에서 합쳐서 최대 5회까지만 호출하세요. "
     "5회를 다 쓰지 않았더라도 끼니마다 적당한 요리를 이미 찾았다면 더 검색하지 말고 바로 최종 식단을 완성하세요. "
+    "MealPlan의 summary 필드에는 새 수치를 지어내지 말고 이 대화에서 실제로 계산된 값만 언급하세요. "
     "이 서비스는 전문 의료·영양 상담을 대체하지 않습니다."
 )
 
@@ -65,18 +75,29 @@ REQUEST_TYPE_HINTS: dict[str, str] = {
         "최종 MealPlan은 하루 전체를 나타내야 합니다 — 이미 드신 계획 외 식사도 하나의 끼니로 포함하세요 "
         "(meal_type은 '계획 외 식사'로 하고, estimate_meal_nutrition이 반환한 값을 그대로 사용). "
         "그 뒤에 잔여 예산에 맞게 추천하는 나머지 끼니들을 이어서 구성하세요. "
-        "daily_calorie_target/daily_macros는 잔여 예산이 아니라 원래 하루 전체 목표값을 그대로 유지하세요."
+        "daily_calorie_target/daily_macros는 잔여 예산이 아니라 원래 하루 전체 목표값을 그대로 유지하세요. "
+        "MealPlan.summary에는 estimate_meal_nutrition이 추정한 계획 외 식사의 칼로리(예: '삼겹살+소주로 "
+        "대략 1,400kcal를 드신 것 같아요')와 calc_remaining_budget이 계산한 잔여 예산(예: '오늘 남은 예산은 "
+        "650kcal 정도예요')을 반드시 언급하고, '무리하게 굶기보다는 가벼운 저칼로리 메뉴로 조절하자'는 안내로 "
+        "마무리하세요. 두 Tool이 실제로 반환한 값만 쓰고 새로운 숫자를 만들어내지 마세요."
     ),
     "delivery": (
         "사용자가 배달 음식을 원합니다. search_delivery_menu로 원하는 브랜드/메뉴를 검색해 "
-        "잔여 예산 합계에 맞는 메뉴 조합을 추천하세요. 각 Dish의 brand 필드에 브랜드명을 반드시 채우세요."
+        "잔여 예산 합계에 맞는 메뉴 조합을 추천하세요. 각 Dish의 brand 필드에 브랜드명을 반드시 채우세요. "
+        "MealPlan.summary에는 calc_remaining_budget으로 계산한 잔여 예산과, search_delivery_menu로 찾은 "
+        "메뉴(브랜드/메뉴명)가 왜 그 예산에 맞는지를 1~2문장으로 언급하세요. 실제로 계산·검색된 값만 "
+        "사용하고 지어내지 마세요."
     ),
     "general": (
         "사용자가 일반적인 하루 식단을 원합니다. meal_type은 반드시 '아침', '점심', '저녁' 3개를 모두 사용하세요. "
         "search_recipes를 끼니마다 따로 호출해 각 끼니에 요리를 1~2개씩 배정하고, 하루 목표 칼로리에 "
-        "합계가 최대한 맞도록(±10% 이내) 요리 개수를 조정하세요."
+        "합계가 최대한 맞도록(±10% 이내) 요리 개수를 조정하세요. "
+        "MealPlan.summary에는 앞선 [사전 계산됨] 시스템 메시지에 있는 BMR/TDEE·하루 목표 칼로리·매크로 "
+        "수치를 근거로, 목표(감량/유지/증량)에 따라 왜 이렇게 설정했는지 1~2문장으로 설명하세요. 그 "
+        "메시지에 있는 수치만 그대로 인용하고 새로 계산하거나 지어내지 마세요."
     ),
 }
+
 
 _profile_store: ProfileStore = SQLiteProfileStore()
 
@@ -84,7 +105,9 @@ _profile_store: ProfileStore = SQLiteProfileStore()
 _PROFILE_EXTRACTION_SYSTEM_PROMPT = (
     "사용자 메시지에서 명시적으로 언급된 신체 정보/목표만 추출하세요. "
     "메시지에 직접 언급되지 않은 필드는 절대 추측하거나 임의의 값으로 채우지 말고 "
-    "반드시 null(비워둠)로 남기세요."
+    "반드시 null(비워둠)로 남기세요. "
+    "사용자가 자신의 정확한 기초대사량(BMR)이나 활동대사량(TDEE) 수치를 직접 알려준 경우 "
+    "custom_bmr_kcal/custom_tdee_kcal에 그 값을 추출하세요."
 )
 
 PROFILE_FIELDS = ("gender", "age", "height_cm", "weight_kg", "activity_level", "goal")
@@ -140,21 +163,27 @@ def _merge_profile_extraction(
 
 
 class _RequestClassification(BaseModel):
-    request_type: Literal["unplanned_meal", "delivery", "general"] = Field(
+    request_type: Literal["unplanned_meal", "delivery", "general", "profile_update"] = Field(
         description=(
             "unplanned_meal: 사용자가 이미 무언가를 먹었다고 명시적으로 언급한 경우만. "
             "delivery: 배달 음식/특정 프랜차이즈 메뉴를 원하는 경우. "
+            "profile_update: 메시지에 '기초대사량'/'BMR' 또는 '활동대사량'/'TDEE'라는 단어가 "
+            "명시적으로 등장하며 그 수치를 알려주는 경우만. "
             "general: 그 외 하루 식단 전체를 추천해달라는 일반적인 요청."
         )
     )
 
 
 _REQUEST_CLASSIFICATION_SYSTEM_PROMPT = (
-    "사용자의 최신 메시지를 아래 세 유형 중 하나로 분류하세요.\n"
+    "사용자의 최신 메시지를 아래 네 유형 중 하나로 분류하세요.\n"
     "- unplanned_meal: 사용자가 이미 어떤 음식/식사를 했다고 명시적으로 언급했을 때만 해당합니다.\n"
     "- delivery: 사용자가 배달 음식이나 특정 프랜차이즈 메뉴를 원할 때 해당합니다.\n"
+    "- profile_update: 메시지에 '기초대사량'/'BMR' 또는 '활동대사량'/'TDEE'라는 단어가 명시적으로 "
+    "등장하며 그 수치를 알려줄 때만 해당합니다(예: '내 기초대사량은 1650이고 활동대사량은 2400이야').\n"
     "- general: 그 외 하루 식단 전체(아침/점심/저녁)를 추천해달라는 요청은 모두 general입니다.\n"
-    "먹은 음식을 명시적으로 언급하지 않았다면 절대 unplanned_meal로 분류하지 마세요."
+    "먹은 음식을 명시적으로 언급하지 않았다면 절대 unplanned_meal로 분류하지 마세요. "
+    "'기초대사량'/'BMR'/'활동대사량'/'TDEE'라는 단어가 메시지에 실제로 등장하지 않으면, 나이·키·몸무게 "
+    "같은 다른 신체 수치가 언급되었더라도 절대 profile_update로 분류하지 마세요."
 )
 
 
@@ -216,6 +245,7 @@ def _get_inner_agent():
             system_prompt=SYSTEM_PROMPT,
             response_format=MealPlan,
             middleware=[
+                ToolCallBudgetMiddleware(),
                 SearchCallBudgetMiddleware(),
                 DuplicateToolCallGuardMiddleware(),
                 LoggingMiddleware(),
@@ -228,7 +258,7 @@ def _get_inner_agent():
 
 def check_profile(state: AgentState) -> dict:
     profile = _profile_store.get(state["user_id"])
-    return {"profile": profile}
+    return {"profile": profile, "profile_just_created": False}
 
 
 def route_after_check_profile(state: AgentState) -> str:
@@ -257,9 +287,16 @@ def check_completeness(state: AgentState) -> dict:
         goal=merged.goal,
         allergies=[],
         disliked_ingredients=[],
+        custom_bmr_kcal=merged.custom_bmr_kcal,
+        custom_tdee_kcal=merged.custom_tdee_kcal,
     )
     _profile_store.save(state["user_id"], profile)
-    return {"profile": profile, "needs_more_info": False, "partial_profile": ProfileExtraction()}
+    return {
+        "profile": profile,
+        "profile_just_created": True,
+        "needs_more_info": False,
+        "partial_profile": ProfileExtraction(),
+    }
 
 
 def route_after_check_completeness(state: AgentState) -> str:
@@ -287,11 +324,16 @@ def ask_for_more_info(state: AgentState) -> dict:
 
 def calculate_targets(state: AgentState) -> dict:
     profile = state["profile"]
-    bmr_tdee = nutrition_calc.calculate_bmr_tdee(profile)
+    if profile.custom_bmr_kcal is not None and profile.custom_tdee_kcal is not None:
+        bmr_tdee = BmrTdeeResult(bmr_kcal=profile.custom_bmr_kcal, tdee_kcal=profile.custom_tdee_kcal)
+    else:
+        bmr_tdee = nutrition_calc.calculate_bmr_tdee(profile)
     calorie_target = nutrition_calc.calculate_calorie_target(bmr_tdee, profile.goal, profile.weight_kg)
     macros = calorie_target.macros
+    bmr_source = "사용자가 직접 알려준" if profile.custom_bmr_kcal is not None else "계산된"
     summary = (
-        f"[사전 계산됨] 하루 목표 칼로리 {calorie_target.target_kcal:.0f}kcal, "
+        f"[사전 계산됨] {bmr_source} BMR {bmr_tdee.bmr_kcal:.0f}kcal, TDEE {bmr_tdee.tdee_kcal:.0f}kcal, "
+        f"하루 목표 칼로리 {calorie_target.target_kcal:.0f}kcal, "
         f"단백질 {macros.protein_g:.0f}g / 탄수화물 {macros.carbs_g:.0f}g / 지방 {macros.fat_g:.0f}g. "
         "이미 계산된 값이니 calculate_bmr_tdee/calculate_calorie_target을 다시 호출하지 말고 이 값을 사용하세요."
     )
@@ -309,8 +351,84 @@ def classify_request(state: AgentState) -> dict:
             HumanMessage(content=latest_message),
         ]
     )
-    hint = SystemMessage(content=REQUEST_TYPE_HINTS[classification.request_type])
-    return {"request_type": classification.request_type, "messages": [hint]}
+    updates: dict = {"request_type": classification.request_type}
+    # profile_update는 식단 추천 agent로 가지 않으므로 REQUEST_TYPE_HINTS에 없다.
+    hint_text = REQUEST_TYPE_HINTS.get(classification.request_type)
+    if hint_text is not None:
+        updates["messages"] = [SystemMessage(content=hint_text)]
+    return updates
+
+
+def route_after_classify_request(state: AgentState) -> str:
+    return "update_profile" if state["request_type"] == "profile_update" else "agent"
+
+
+class _CustomMetabolismExtraction(BaseModel):
+    custom_bmr_kcal: float | None = Field(
+        default=None, description="사용자가 직접 알려준 기초대사량(BMR, kcal). 언급 없으면 null."
+    )
+    custom_tdee_kcal: float | None = Field(
+        default=None, description="사용자가 직접 알려준 활동대사량(TDEE, kcal). 언급 없으면 null."
+    )
+
+
+_CUSTOM_METABOLISM_SYSTEM_PROMPT = (
+    "사용자 메시지에서 기초대사량(BMR)과 활동대사량(TDEE) 수치(kcal)를 추출하세요. "
+    "메시지에 언급되지 않은 값은 절대 추측하지 말고 null로 남기세요."
+)
+
+_custom_metabolism_llm: Runnable | None = None
+
+
+def _get_custom_metabolism_llm() -> Runnable:
+    global _custom_metabolism_llm
+    if _custom_metabolism_llm is None:
+        from langchain_openai import ChatOpenAI
+
+        _custom_metabolism_llm = ChatOpenAI(model="gpt-4o-mini", temperature=0).with_structured_output(
+            _CustomMetabolismExtraction
+        )
+    return _custom_metabolism_llm
+
+
+def update_profile(state: AgentState) -> dict:
+    latest_message = _latest_human_text(state["messages"])
+    extraction = _get_custom_metabolism_llm().invoke(
+        [
+            SystemMessage(content=_CUSTOM_METABOLISM_SYSTEM_PROMPT),
+            HumanMessage(content=latest_message),
+        ]
+    )
+
+    if extraction.custom_bmr_kcal is None or extraction.custom_tdee_kcal is None:
+        content = (
+            "기초대사량과 활동대사량을 정확히 반영하려면 두 값이 모두 필요해요. "
+            "예: '내 기초대사량은 1650kcal, 활동대사량은 2400kcal야'처럼 두 값을 함께 알려주세요."
+        )
+        return {"messages": [AIMessage(content=content)]}
+
+    profile = state["profile"]
+    updated_profile = profile.model_copy(
+        update={
+            "custom_bmr_kcal": extraction.custom_bmr_kcal,
+            "custom_tdee_kcal": extraction.custom_tdee_kcal,
+        }
+    )
+    _profile_store.save(state["user_id"], updated_profile)
+
+    calorie_target = nutrition_calc.calculate_calorie_target(
+        BmrTdeeResult(bmr_kcal=extraction.custom_bmr_kcal, tdee_kcal=extraction.custom_tdee_kcal),
+        updated_profile.goal,
+        updated_profile.weight_kg,
+    )
+    macros = calorie_target.macros
+    content = (
+        f"기초대사량 {extraction.custom_bmr_kcal:.0f}kcal, 활동대사량 {extraction.custom_tdee_kcal:.0f}kcal로 "
+        "직접 알려주신 값을 저장했어요. 앞으로는 이 값을 기준으로 계산할게요. "
+        f"목표를 반영한 하루 목표 칼로리는 약 {calorie_target.target_kcal:.0f}kcal, "
+        f"단백질 {macros.protein_g:.0f}g / 탄수화물 {macros.carbs_g:.0f}g / 지방 {macros.fat_g:.0f}g이에요."
+    )
+    return {"profile": updated_profile, "messages": [AIMessage(content=content)]}
 
 
 MEAL_PLAN_CALORIE_TOLERANCE = 0.15
@@ -369,6 +487,7 @@ def build_graph():
     builder.add_node("ask_for_more_info", ask_for_more_info)
     builder.add_node("calculate_targets", calculate_targets)
     builder.add_node("classify_request", classify_request)
+    builder.add_node("update_profile", update_profile)
     builder.add_node("agent", _get_inner_agent())
     builder.add_node("verify_meal_plan", verify_meal_plan)
 
@@ -385,7 +504,12 @@ def build_graph():
     )
     builder.add_edge("ask_for_more_info", END)
     builder.add_edge("calculate_targets", "classify_request")
-    builder.add_edge("classify_request", "agent")
+    builder.add_conditional_edges(
+        "classify_request",
+        route_after_classify_request,
+        {"agent": "agent", "update_profile": "update_profile"},
+    )
+    builder.add_edge("update_profile", END)
     builder.add_edge("agent", "verify_meal_plan")
     builder.add_conditional_edges(
         "verify_meal_plan",

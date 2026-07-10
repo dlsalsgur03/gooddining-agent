@@ -28,6 +28,8 @@ def make_profile(**overrides):
         goal=Goal.LOSE,
         allergies=[],
         disliked_ingredients=[],
+        custom_bmr_kcal=None,
+        custom_tdee_kcal=None,
     )
     defaults.update(overrides)
     return UserProfile(**defaults)

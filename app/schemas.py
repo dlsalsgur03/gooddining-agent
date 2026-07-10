@@ -31,6 +31,9 @@ class ProfileExtraction(BaseModel):
     weight_kg: float | None = None
     activity_level: ActivityLevel | None = None
     goal: Goal | None = None
+    # 사용자가 자신의 정확한 기초대사량/활동대사량을 직접 알려준 경우에만 채워짐.
+    custom_bmr_kcal: float | None = None
+    custom_tdee_kcal: float | None = None
 
 
 class UserProfile(BaseModel):
@@ -44,6 +47,17 @@ class UserProfile(BaseModel):
     # required이길 요구한다(선택 항목은 default가 아니라 값 자체를 빈 리스트로 채워야 함).
     allergies: list[str]
     disliked_ingredients: list[str]
+    # 사용자가 직접 알려준 값. 둘 다 채워졌을 때만 계산식 대신 이 값을 사용한다.
+    custom_bmr_kcal: float | None
+    custom_tdee_kcal: float | None
+
+
+class ProfileView(UserProfile):
+    """`/profile` 응답 전용. 저장된 프로필에 계산/적용된 BMR·TDEE를 덧붙여 보여준다."""
+
+    bmr_kcal: float
+    tdee_kcal: float
+    is_custom_metabolism: bool
 
 
 class MacroTargets(BaseModel):
@@ -91,6 +105,7 @@ class MealPlan(BaseModel):
     daily_calorie_target: float
     daily_macros: MacroTargets
     meals: list[Meal]
+    summary: str
 
 
 class MealNutritionEstimate(BaseModel):

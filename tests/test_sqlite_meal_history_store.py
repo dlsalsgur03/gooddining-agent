@@ -4,6 +4,7 @@ from app.schemas import Dish, MacroTargets, Meal, MealPlan
 
 def make_meal_plan(calorie_target=2000.0):
     return MealPlan(
+        summary="테스트용 식단 요약",
         daily_calorie_target=calorie_target,
         daily_macros=MacroTargets(protein_g=150, carbs_g=200, fat_g=60),
         meals=[

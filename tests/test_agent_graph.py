@@ -65,6 +65,8 @@ class TestProfileStoreRoutingIntegration:
             goal=Goal.LOSE,
             allergies=[],
             disliked_ingredients=[],
+            custom_bmr_kcal=None,
+            custom_tdee_kcal=None,
         )
         store.save("user-1", profile)
         monkeypatch.setattr(agent, "_profile_store", store)
@@ -186,6 +188,8 @@ class TestCalculateTargets:
             goal=Goal.LOSE,
             allergies=[],
             disliked_ingredients=[],
+            custom_bmr_kcal=None,
+            custom_tdee_kcal=None,
         )
         result = calculate_targets(make_state(profile=profile))
 
@@ -223,6 +227,7 @@ def make_dish(name="참치 샐러드", calories=250.0):
 
 def make_meal_plan(meal_types_and_calories):
     return MealPlan(
+        summary="테스트용 식단 요약",
         daily_calorie_target=2000.0,
         daily_macros=MacroTargets(protein_g=150, carbs_g=200, fat_g=60),
         meals=[

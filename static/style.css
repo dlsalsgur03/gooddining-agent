@@ -157,6 +157,12 @@ header h1 {
   color: #333;
 }
 
+.custom-tag {
+  font-size: 11px;
+  color: #4a90d9;
+  font-weight: 600;
+}
+
 .plan-summary {
   padding: 8px 10px;
   background: #f5f5f5;
@@ -210,6 +216,7 @@ header h1 {
 }
 
 .cal-day {
+  position: relative;
   padding: 6px 0;
   font-size: 12px;
   background: transparent;
@@ -221,10 +228,16 @@ header h1 {
   background: #eee;
 }
 
-.cal-day.has-data {
-  background: #e3edfb;
-  font-weight: 600;
-  color: #2a5da8;
+.cal-day.has-data::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #4a90d9;
 }
 
 .cal-day.is-today {

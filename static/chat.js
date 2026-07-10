@@ -70,10 +70,15 @@ async function openProfileModal() {
       throw new Error(`서버 오류 (${response.status})`);
     }
     const profile = await response.json();
+    const metabolismTag = profile.is_custom_metabolism
+      ? ` <span class="custom-tag">(직접 입력)</span>`
+      : "";
     profileModalContentEl.innerHTML =
       `${GENDER_LABELS[profile.gender]}, ${profile.age}세<br>` +
       `${profile.height_cm}cm / ${profile.weight_kg}kg<br>` +
-      `활동량: ${ACTIVITY_LABELS[profile.activity_level]} · 목표: ${GOAL_LABELS[profile.goal]}` +
+      `활동량: ${ACTIVITY_LABELS[profile.activity_level]} · 목표: ${GOAL_LABELS[profile.goal]}<br>` +
+      `기초대사량(BMR): ${profile.bmr_kcal.toFixed(0)}kcal · ` +
+      `활동대사량(TDEE): ${profile.tdee_kcal.toFixed(0)}kcal${metabolismTag}` +
       (profile.allergies.length ? `<br>알러지: ${profile.allergies.join(", ")}` : "") +
       (profile.disliked_ingredients.length
         ? `<br>비선호 재료: ${profile.disliked_ingredients.join(", ")}`

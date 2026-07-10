@@ -11,9 +11,10 @@ class AgentState(TypedDict):
     messages: Annotated[list[AnyMessage], add_messages]
     user_id: str
     profile: UserProfile | None
+    profile_just_created: bool
     partial_profile: ProfileExtraction
     calorie_target: CalorieTarget | None
-    request_type: Literal["unplanned_meal", "delivery", "general"] | None
+    request_type: Literal["unplanned_meal", "delivery", "general", "profile_update"] | None
     needs_more_info: bool
     structured_response: MealPlan | None
     meal_plan_retries: int
